@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="row">
+    {% for row in animals|batch(2) %}
+    <div class="column">
+        {% for animal in row %}
+        <div class="card">
+            {% if animal == 'Tenders' %}
+            <img src="https://static.wixstatic.com/media/b60bb2_47921d6ea6d44397ad33fd7d05444523~mv2.jpeg" style="max-height: 500px; max-width: 300px; align: middle">
+            {% endif %}
+            {% if animal == 'Apollo' %}
+            <img src="https://static.wixstatic.com/media/b60bb2_54cfd9fd2d224d669526bdd03c90d2fe~mv2.jpeg" style="max-height: 500px; max-width: 300px; align: middle">
+            {% endif %}
+            {% if animal == 'Ryan the Engineering Cat' %}
+            <img src="https://static.wixstatic.com/media/b60bb2_fbe16ebf39234b9fb38cd2f025f7e643~mv2.jpg" style="max-height: 500px; max-width: 300px; align: middle">
+            {% endif %}
+             {% if animal == 'Campus Cat #4' %}
+            <img src="https://static.wixstatic.com/media/b60bb2_5c6d1df1ca594d51ac037874dd4418d8~mv2.jpeg" style="max-height: 500px; max-width: 300px; align: middle">
+            {% endif %}
+            <div class="container">
+                <h4><b>{{ animal }}</b></h4>
+                <p>{{ "Last Sighted: 01/30/2022 at 10:23 AM" }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+
+</div>
+
+
+
+
+{% endblock %}
